@@ -19,14 +19,7 @@ public class TeamMapper {
     }
 
     public TeamDTO toDTO(Team team) {
-        TeamDTO teamDTO = new TeamDTO();
-        teamDTO.setId(team.getId());
-        teamDTO.setName(team.getName());
-        List<UserDTO> userDTOS = team.getUsers().stream().map(userMapper::toDTO).toList();
-        teamDTO.setTeamMembers(userDTOS);
-        User createdBy = team.getCreatedBy();
-        teamDTO.setCreatedBy(userMapper.toDTO(createdBy));
-        return teamDTO;
+        return new TeamDTO(team.getId(), team.getName(), userMapper.toDTO(team.getCreatedBy()), team.getUsers().stream().map(userMapper::toDTO).toList());
     }
 
     public List<TeamDTO> toDTOs(List<Team> team) {

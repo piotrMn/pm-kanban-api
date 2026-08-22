@@ -10,7 +10,7 @@ public class CreateTeamRequest {
 
     private String name;
 
-    private UUID createdById;
+    private String createdByEmail;
 
     private List<UUID> membersIds;
 

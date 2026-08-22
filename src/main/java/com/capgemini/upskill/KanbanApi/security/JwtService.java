@@ -6,6 +6,7 @@ import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
@@ -18,9 +19,13 @@ import java.util.function.Function;
 @Component
 public class JwtService {
 
-    private static final Logger logger = LoggerFactory.getLogger(JwtService.class);
+    @Value("${app.jwt.secret}")
+    private String jwtSecret;
 
-    public static final String SECRET = "mQgFNWSrwQARkCydK40ts0BOwJarGYAd9f2xnrBKHDzE09w4PWT9qHwtbM23Kola";
+    @Value("${app.jwt.expiration}")
+    private int jwtExpirationMs;
+
+    private static final Logger logger = LoggerFactory.getLogger(JwtService.class);
 
     public String generateToken(String email) { // Use email as username
         logger.info("Generating JWT token for {}", email);
@@ -33,13 +38,13 @@ public class JwtService {
                 .claims(claims)
                 .subject(email)
                 .issuedAt(new Date())
-                .expiration(new Date(System.currentTimeMillis() + 1000 * 60 * 30))
+                .expiration(new Date(System.currentTimeMillis() + jwtExpirationMs))
                 .signWith(getSignKey())
                 .compact();
     }
 
     private SecretKey getSignKey() {
-        byte[] keyBytes = Decoders.BASE64.decode(SECRET);
+        byte[] keyBytes = Decoders.BASE64.decode(jwtSecret);
         return Keys.hmacShaKeyFor(keyBytes);
     }
 

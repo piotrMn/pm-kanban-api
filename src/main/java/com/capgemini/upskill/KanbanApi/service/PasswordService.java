@@ -17,7 +17,7 @@ public class PasswordService {
     private static final int KEY_LENGTH = 128;
     private static final String ALGORITHM = "PBKDF2WithHmacSHA256";
 
-    static void main(String[] args) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    public static void main(String[] args) throws NoSuchAlgorithmException, InvalidKeySpecException {
         if (args.length != 1) {
             throw new RuntimeException();
         }

@@ -18,19 +18,17 @@ public class ItemMapper {
     }
 
     public ItemDTO toDTO(Item item) {
-        ItemDTO itemDTO = new ItemDTO();
-        itemDTO.setId(item.getId());
-        itemDTO.setState(item.getState().name());
-        itemDTO.setType(item.getType().name());
-        itemDTO.setEstimation(item.getEstimation());
-        itemDTO.setDescription(item.getDescription());
-        itemDTO.setTitle(item.getTitle());
-        itemDTO.setCreatedAt(item.getCreatedAt().toString());
-        itemDTO.setTeamName(item.getTeam().getName());
-        User createdBy = item.getCreatedBy();
-        UserDTO userDTO = userMapper.toDTO(createdBy);
-        itemDTO.setCreatedBy(userDTO);
-        return itemDTO;
+        return new ItemDTO(
+                item.getId(),
+                item.getTitle(),
+                item.getDescription(),
+                item.getState().name(),
+                item.getType().name(),
+                item.getEstimation(),
+                item.getCreatedAt().toString(),
+                userMapper.toDTO(item.getCreatedBy()),
+                item.getTeam().getName()
+                );
     }
 
     public List<ItemDTO> toDTOs(List<Item> items) {

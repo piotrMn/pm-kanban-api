@@ -8,7 +8,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/postgres
     username: postgres
-    password: postgres
+    password: aurora123
 server:
   servlet:
     context-path: /kanban-api
@@ -17,3 +17,7 @@ logging:
     org:
       hibernate:
         SQL: DEBUG
+app:
+  jwt:
+    secret: mQgFNWSrwQARkCydK40ts0BOwJarGYAd9f2xnrBKHDzE09w4PWT9qHwtbM23Kola
+    expiration: 3600000

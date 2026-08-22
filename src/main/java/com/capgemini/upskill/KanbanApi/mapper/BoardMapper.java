@@ -10,12 +10,7 @@ import java.util.List;
 public class BoardMapper {
 
     public BoardDTO toDTO(Board board) {
-        BoardDTO boardDTO = new BoardDTO();
-        boardDTO.setId(board.getId());
-        boardDTO.setName(boardDTO.getName());
-        boardDTO.setTeamName(board.getTeam().getName());
-        boardDTO.setTeamId(board.getTeam().getId());
-        return boardDTO;
+        return new BoardDTO(board.getId(), board.getName(), board.getTeam().getName(), board.getTeam().getId());
     }
 
     public List<BoardDTO> toDTOs(List<Board> boards) {

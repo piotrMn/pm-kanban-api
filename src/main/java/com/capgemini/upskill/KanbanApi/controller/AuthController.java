@@ -3,6 +3,7 @@ package com.capgemini.upskill.KanbanApi.controller;
 import com.capgemini.upskill.KanbanApi.dto.UserDTO;
 import com.capgemini.upskill.KanbanApi.request.LoginUserRequest;
 import com.capgemini.upskill.KanbanApi.request.RegisterUserRequest;
+import com.capgemini.upskill.KanbanApi.response.LoginUserResponse;
 import com.capgemini.upskill.KanbanApi.service.UserService;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
@@ -33,29 +34,24 @@ public class AuthController {
 
     @PostMapping(path = "/register")
     public ResponseEntity<String> registerUser(@Valid @RequestBody RegisterUserRequest request) {
-        UserDTO userDTO;
         try {
-            userDTO = userService.registerUser(request);
+            userService.registerUser(request);
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
-        return ResponseEntity.ok(userDTO.toString());
+        return ResponseEntity.status(201).body("User created");
     }
 
     @PostMapping(path = "/login")
-    @ResponseStatus(HttpStatus.CREATED)
-    public ResponseEntity<String> loginUser(@RequestBody LoginUserRequest request) {
-        String jwt;
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity<LoginUserResponse> loginUser(@RequestBody LoginUserRequest request) {
+        LoginUserResponse response;
         try {
-            jwt = userService.loginUser(request);
+            response = userService.loginUser(request);
         } catch (AuthenticationException e) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid username or password");
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(new LoginUserResponse(null, null, null));
         }
-        if (jwt == null) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid username or password");
-        } else {
-            return ResponseEntity.ok(jwt);
-        }
+        return ResponseEntity.ok(response);
     }
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)

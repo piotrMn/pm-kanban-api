@@ -44,18 +44,18 @@ public class ItemService extends BaseService {
 
     public void saveItem(CreateItemRequest request) {
         Item item = new Item();
-        item.setTitle(request.getTitle());
-        item.setDescription(request.getDescription());
-        item.setEstimation(request.getEstimation());
-        item.setType(request.getType());
-        item.setState(request.getState());
-        UUID assignedToId = request.getAssignedToId();
+        item.setTitle(request.title());
+        item.setDescription(request.description());
+        item.setEstimation(request.estimation());
+        item.setType(request.type());
+        item.setState(request.state());
+        UUID assignedToId = request.assignedToId();
         User assignedTo = userRepository.findById(assignedToId).orElseThrow(createException(User.class, assignedToId));
         item.setAssignedTo(assignedTo);
-        UUID createdById = request.getCreatedById();
+        UUID createdById = request.createdById();
         User createdBy = userRepository.findById(createdById).orElseThrow(createException(User.class, createdById));
         item.setCreatedBy(createdBy);
-        UUID teamId = request.getTeamId();
+        UUID teamId = request.teamId();
         Team team = teamRepository.findById(teamId).orElseThrow(createException(Team.class, teamId));
         item.setTeam(team);
         itemRepository.save(item);
@@ -64,31 +64,31 @@ public class ItemService extends BaseService {
     @Transactional
     public void updateItem(UUID itemId, CreateItemRequest request) {
         Item item = itemRepository.findById(itemId).orElseThrow(createException(Item.class, itemId));
-        if (request.getTitle() != null && !item.getTitle().equals(request.getTitle())) {
-            item.setTitle(request.getTitle());
+        if (request.title() != null && !item.getTitle().equals(request.title())) {
+            item.setTitle(request.title());
         }
-        if (request.getDescription() != null && !item.getDescription().equals(request.getDescription())) {
-            item.setDescription(request.getDescription());
+        if (request.description() != null && !item.getDescription().equals(request.description())) {
+            item.setDescription(request.description());
         }
-        if (request.getType() != null && !item.getType().equals(request.getType())) {
-            item.setType(request.getType());
+        if (request.type() != null && !item.getType().equals(request.type())) {
+            item.setType(request.type());
         }
-        if (request.getState() != null && !item.getState().equals(request.getState())) {
-            item.setState(request.getState());
+        if (request.state() != null && !item.getState().equals(request.state())) {
+            item.setState(request.state());
         }
-        if (request.getEstimation() != null && !item.getEstimation().equals(request.getEstimation())) {
-            item.setEstimation(request.getEstimation());
+        if (request.estimation() != null && !item.getEstimation().equals(request.estimation())) {
+            item.setEstimation(request.estimation());
         }
-        if (request.getCreatedById() != null && !item.getCreatedBy().getId().equals(request.getCreatedById())) {
-            User createdBy = userRepository.findById(request.getCreatedById()).orElseThrow(createException(User.class, request.getCreatedById()));
+        if (request.createdById() != null && !item.getCreatedBy().getId().equals(request.createdById())) {
+            User createdBy = userRepository.findById(request.createdById()).orElseThrow(createException(User.class, request.createdById()));
             item.setCreatedBy(createdBy);
         }
-        if (request.getAssignedToId() != null && !item.getAssignedTo().getId().equals(request.getAssignedToId())) {
-            User assignedTo = userRepository.findById(request.getAssignedToId()).orElseThrow(createException(User.class, request.getAssignedToId()));
+        if (request.assignedToId() != null && !item.getAssignedTo().getId().equals(request.assignedToId())) {
+            User assignedTo = userRepository.findById(request.assignedToId()).orElseThrow(createException(User.class, request.assignedToId()));
             item.setAssignedTo(assignedTo);
         }
-        if (request.getTeamId() != null && !item.getTeam().getId().equals(request.getTeamId())) {
-            Team team = teamRepository.findById(request.getTeamId()).orElseThrow(createException(Team.class, request.getTeamId()));
+        if (request.teamId() != null && !item.getTeam().getId().equals(request.teamId())) {
+            Team team = teamRepository.findById(request.teamId()).orElseThrow(createException(Team.class, request.teamId()));
             item.setTeam(team);
         }
     }

@@ -8,6 +8,7 @@ import com.capgemini.upskill.KanbanApi.repository.TeamRepository;
 import com.capgemini.upskill.KanbanApi.repository.UserRepository;
 import com.capgemini.upskill.KanbanApi.request.LoginUserRequest;
 import com.capgemini.upskill.KanbanApi.request.RegisterUserRequest;
+import com.capgemini.upskill.KanbanApi.response.LoginUserResponse;
 import com.capgemini.upskill.KanbanApi.security.JwtService;
 import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
@@ -20,6 +21,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.stereotype.Service;
 
+import java.nio.file.attribute.UserPrincipalNotFoundException;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.util.List;
@@ -46,22 +48,23 @@ public class UserService extends BaseService {
         this.jwtService = jwtService;
     }
 
-    public UserDTO registerUser(RegisterUserRequest request) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    public void registerUser(RegisterUserRequest request) throws NoSuchAlgorithmException, InvalidKeySpecException {
         logger.info("New user registration request {}", request);
         String hashedPassword = passwordService.hashPassword(request.getPassword(), passwordService.generateSalt());
         User user = new User();
         user.setEmail(request.getEmail());
         user.setName(request.getName());
         user.setPasswordHash(hashedPassword);
-        User saved = userRepository.save(user);
-        return userMapper.toDTO(saved);
+        userRepository.save(user);
     }
 
-    public String loginUser(LoginUserRequest request) {
+    public LoginUserResponse loginUser(LoginUserRequest request) {
         UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword());
         Authentication authentication = authenticationManager.authenticate(token);
         if (authentication.isAuthenticated()) {
-            return jwtService.generateToken(request.getEmail());
+            User user = userRepository.findByEmail(request.getEmail()).orElseThrow();
+            String jwt = jwtService.generateToken(request.getEmail());
+            return new LoginUserResponse(jwt, user.getName(), user.getEmail());
         } else {
             return null;
         }

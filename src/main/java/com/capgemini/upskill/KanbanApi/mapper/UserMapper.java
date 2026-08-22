@@ -10,12 +10,7 @@ import java.util.List;
 public class UserMapper {
 
     public UserDTO toDTO(User user) {
-        UserDTO userDTO = new UserDTO();
-        userDTO.setId(user.getId());
-        userDTO.setName(user.getName());
-        userDTO.setEmail(user.getEmail());
-        userDTO.setHashedPassword(user.getPasswordHash());
-        return userDTO;
+        return new UserDTO(user.getId(), user.getName(), user.getEmail());
     }
 
     public List<UserDTO> toDTOs(List<User> users) {

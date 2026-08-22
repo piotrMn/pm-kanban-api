@@ -1,8 +1,6 @@
 package com.capgemini.upskill.KanbanApi.security;
 
-import com.capgemini.upskill.KanbanApi.dto.UserDTO;
 import com.capgemini.upskill.KanbanApi.repository.UserRepository;
-import com.capgemini.upskill.KanbanApi.service.UserService;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -23,6 +21,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     }
 
     @Override
+    @SuppressWarnings("NullableProblems")
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         com.capgemini.upskill.KanbanApi.domain.User user = userRepository.findByEmail(username).orElseThrow();
         Set<GrantedAuthority> authorities = new HashSet<>();

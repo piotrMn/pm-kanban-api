@@ -1,18 +1,16 @@
 package com.capgemini.upskill.KanbanApi.dto;
 
-import lombok.Data;
-
 import java.util.UUID;
 
-@Data
-public class BoardDTO {
+public record BoardDTO(
+        UUID id,
 
-    private UUID id;
+        String name,
 
-    private String name;
+        String teamName,
 
-    private String teamName;
+        UUID teamId
+){}
 
-    private UUID teamId;
 
-}
+

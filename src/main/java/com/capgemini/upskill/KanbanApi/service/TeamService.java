@@ -39,8 +39,9 @@ public class TeamService extends BaseService {
     }
 
     public void saveTeam(CreateTeamRequest request) {
-        User createdBy = userRepository.findById(request.getCreatedById()).orElseThrow(createException(User.class, request.getCreatedById()));
+        User createdBy = userRepository.findByEmail(request.getCreatedByEmail()).orElseThrow();
         Team team = new Team();
+        team.setName(request.getName());
         team.setCreatedBy(createdBy);
         for(UUID id : request.getMembersIds()) {
             User user = userRepository.findById(id).orElseThrow(createException(User.class, id));

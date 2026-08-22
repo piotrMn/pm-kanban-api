@@ -3,8 +3,12 @@ package com.capgemini.upskill.KanbanApi.controller;
 import com.capgemini.upskill.KanbanApi.request.CreateItemRequest;
 import com.capgemini.upskill.KanbanApi.domain.enums.ItemState;
 import com.capgemini.upskill.KanbanApi.dto.ItemDTO;
+import com.capgemini.upskill.KanbanApi.request.UpdateItemAssignRequest;
+import com.capgemini.upskill.KanbanApi.request.UpdateItemEstimationRequest;
+import com.capgemini.upskill.KanbanApi.request.UpdateItemStateRequest;
 import com.capgemini.upskill.KanbanApi.service.ItemService;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -53,26 +57,23 @@ public class ItemController {
 
     @PostMapping(path = "/{id}/assign")
     @ResponseStatus(HttpStatus.OK)
-    public void assignUserToItem(@RequestBody UUID userId, @PathVariable("id") UUID itemId ) {
-        CreateItemRequest request = new CreateItemRequest();
-        request.setAssignedToId(userId);
-        itemService.updateItem(itemId, request);
+    public void assignUserToItem(@RequestBody UpdateItemAssignRequest request, @PathVariable("id") UUID itemId ) {
+        CreateItemRequest createItemRequest = new CreateItemRequest(null, null, null, null, null, null, request.assignTo(), null);
+        itemService.updateItem(itemId, createItemRequest);
     }
 
     @PostMapping(path = "/{id}/state")
     @ResponseStatus(HttpStatus.OK)
-    public void updateItemState(@RequestBody ItemState state, @PathVariable("id") UUID itemId ) {
-        CreateItemRequest request = new CreateItemRequest();
-        request.setState(state);
-        itemService.updateItem(itemId, request);
+    public void updateItemState(@RequestBody UpdateItemStateRequest request, @PathVariable("id") UUID itemId ) {
+        CreateItemRequest createItemRequest = new CreateItemRequest(null, null, null, null, request.state(), null, null, null);
+        itemService.updateItem(itemId, createItemRequest);
     }
 
     @PostMapping(path = "/{id}/estimation")
     @ResponseStatus(HttpStatus.OK)
-    public void updateItemEstimation(@RequestBody Integer estimation, @PathVariable("id") UUID itemId ) {
-        CreateItemRequest request = new CreateItemRequest();
-        request.setEstimation(estimation);
-        itemService.updateItem(itemId, request);
+    public void updateItemEstimation(@RequestBody UpdateItemEstimationRequest request, @PathVariable("id") UUID itemId ) {
+        CreateItemRequest createItemRequest = new CreateItemRequest(null, null, request.estimation(), null, null, null, null, null);
+        itemService.updateItem(itemId, createItemRequest);
     }
 
 }
