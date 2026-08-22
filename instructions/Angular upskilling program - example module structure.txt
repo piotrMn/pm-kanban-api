@@ -1,0 +1,19 @@
+app/
+ ├── core/
+ │   ├── services/
+ │   ├── guards/
+ │   ├── interceptors/
+ │
+ ├── shared/
+ │   ├── components/
+ │   ├── models/
+ │
+ ├── features/
+ │   ├── auth/
+ │   ├── teams/
+ │   ├── board/
+ │   ├── backlog/
+ │   ├── items/
+ │
+ ├── app-routing.module.ts
+ └── app.module.ts

@@ -1,0 +1,77 @@
+1. Core Entities
+
+User
+Represents application users.
+Fields:
+ - id (UUID, primary key)
+ - email (string, unique)
+ - passwordHash (string)
+ - name (string)
+ 
+Team
+Logical grouping of users and work.
+Fields:
+ - id (UUID, primary key)
+ - name (string)
+ - createdBy (User reference)
+ 
+UserTeam
+Join table for many-to-many relation between users and teams.
+Fields:
+ - userId (User reference)
+ - teamId (Team reference)
+ - role (string, optional: MEMBER / ADMIN)
+Primary key:
+ - (userId, teamId)
+ 
+Board
+Represents a board for a team.
+Fields:
+ - id (UUID, primary key)
+ - teamId (Team reference)
+ - name (string)
+Notes:
+ - Typically one team has a product backlog board and a sprint board
+ 
+Item
+Represents a task/work item.
+Fields:
+ - id (UUID, primary key)
+ - title (string)
+ - description (text)
+ - type (string: EPIC | STORY | DEFECT)
+ - state (string: TO_DO | READY | IN_PROGRESS | CODE_REVIEW | IN_TEST | READY_FOR_PROD | DONE)
+ - estimation (integer, nullable)
+ - assignedTo (User reference, nullable)
+ - teamId (Team reference)
+ - createdBy (User reference)
+ - createdAt (timestamp)
+ 
+WipLimit
+Defines maximum number of items allowed per state.
+Fields:
+ - id (UUID, primary key)
+ - teamId (Team reference)
+ - state (string)
+ - maxItems (integer)
+Notes:
+ - No limit required for TO_DO state
+ 
+Comment (optional)
+Allows discussion on items.
+Fields:
+ - id (UUID, primary key)
+ - itemId (Item reference)
+ - authorId (User reference)
+ - content (text)
+ - createdAt (timestamp)
+
+
+2. Relationships Overview
+ - User ↔ Team: many-to-many (via UserTeam)
+ - Team → Board: one-to-many
+ - Team → Item: one-to-many
+ - User → Item: one-to-many (createdBy)
+ - User → Item: one-to-many (assignedTo, optional)
+ - Item → Comment: one-to-many
+ - Team → WipLimit: one-to-many
