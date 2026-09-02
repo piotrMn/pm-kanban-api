@@ -13,8 +13,11 @@ public class ItemMapper {
 
     private final UserMapper userMapper;
 
-    public ItemMapper(UserMapper userMapper) {
+    private final BoardMapper boardMapper;
+
+    public ItemMapper(UserMapper userMapper, BoardMapper boardMapper) {
         this.userMapper = userMapper;
+        this.boardMapper = boardMapper;
     }
 
     public ItemDTO toDTO(Item item) {
@@ -27,7 +30,9 @@ public class ItemMapper {
                 item.getEstimation(),
                 item.getCreatedAt().toString(),
                 userMapper.toDTO(item.getCreatedBy()),
-                item.getTeam().getName()
+                item.getTeam().getName(),
+                item.getAssignedTo() != null ? userMapper.toDTO(item.getAssignedTo()) : null,
+                boardMapper.toDTO(item.getBoard())
                 );
     }
 

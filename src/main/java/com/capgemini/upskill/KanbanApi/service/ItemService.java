@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Service
-public class ItemService extends BaseService {
+public class ItemService {
 
     private final ItemRepository itemRepository;
     private final UserRepository userRepository;
@@ -32,13 +32,13 @@ public class ItemService extends BaseService {
         this.itemMapper = itemMapper;
     }
 
-    public List<ItemDTO> getFiltered(UUID teamId, ItemState state) {
-        List<Item> items = itemRepository.getFiltered(teamId, state);
+    public List<ItemDTO> getFiltered(UUID teamId, UUID boardId, ItemState state) {
+        List<Item> items = itemRepository.getFiltered(teamId, boardId, state);
         return itemMapper.toDTOs(items);
     }
 
     public ItemDTO findById(UUID itemId) {
-        Item item = itemRepository.findById(itemId).orElseThrow(createException(Item.class, itemId));
+        Item item = itemRepository.findById(itemId).orElseThrow();
         return itemMapper.toDTO(item);
     }
 
@@ -50,13 +50,13 @@ public class ItemService extends BaseService {
         item.setType(request.type());
         item.setState(request.state());
         UUID assignedToId = request.assignedToId();
-        User assignedTo = userRepository.findById(assignedToId).orElseThrow(createException(User.class, assignedToId));
+        User assignedTo = userRepository.findById(assignedToId).orElseThrow();
         item.setAssignedTo(assignedTo);
         UUID createdById = request.createdById();
-        User createdBy = userRepository.findById(createdById).orElseThrow(createException(User.class, createdById));
+        User createdBy = userRepository.findById(createdById).orElseThrow();
         item.setCreatedBy(createdBy);
         UUID teamId = request.teamId();
-        Team team = teamRepository.findById(teamId).orElseThrow(createException(Team.class, teamId));
+        Team team = teamRepository.findById(teamId).orElseThrow();
         item.setTeam(team);
         itemRepository.save(item);
     }

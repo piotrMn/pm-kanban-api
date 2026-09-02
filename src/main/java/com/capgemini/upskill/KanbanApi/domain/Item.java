@@ -47,6 +47,10 @@ public class Item {
     private Team team;
 
     @ManyToOne
+    @JoinColumn(name = "board_id")
+    private Board board;
+
+    @ManyToOne
     @JoinColumn(name = "created_by")
     private User createdBy;
 
@@ -61,7 +65,5 @@ public class Item {
         this.state = state;
         this.estimation = estimation;
     }
-
-
 
 }

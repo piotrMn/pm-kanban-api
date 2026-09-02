@@ -36,20 +36,21 @@ public class TeamController {
 
     @GetMapping(path = "/{teamId}/members")
     @ResponseStatus(HttpStatus.OK)
-    public TeamDTO getTeamById(@PathVariable UUID teamId) {
+    public TeamDTO getTeamById(@PathVariable String teamId) {
         return teamService.getById(teamId);
     }
 
     @PostMapping(path = "/{teamId}/members")
     @ResponseStatus(HttpStatus.OK)
-    public void addUserToTeam(@PathVariable UUID teamId, @RequestBody UUID userId) {
+    public void addUserToTeam(@PathVariable String teamId, @RequestBody String userId) {
         userService.addUserToTeam(userId, teamId);
     }
 
     @DeleteMapping(path = "/{teamId}/members")
     @ResponseStatus(HttpStatus.OK)
-    public void removeUserFromTeam(@PathVariable UUID teamId, @RequestBody UUID userId) {
-        userService.removeUserFromTeam(userId, teamId);
+    public void removeUserFromTeam(@PathVariable UUID teamId, @RequestBody String userId) {
+        UUID uuid = UUID.fromString(userId);
+        userService.removeUserFromTeam(uuid, teamId);
     }
 
 }

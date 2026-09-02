@@ -25,6 +25,10 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         com.capgemini.upskill.KanbanApi.domain.User user = userRepository.findByEmail(username).orElseThrow();
         Set<GrantedAuthority> authorities = new HashSet<>();
+        String role = user.getRole();
+        if (role != null) {
+            authorities.add((GrantedAuthority) () -> role);
+        }
         return new User(user.getEmail(), user.getPasswordHash(), authorities);
     }
 

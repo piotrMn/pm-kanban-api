@@ -14,10 +14,10 @@ public class RegisterUserRequest {
     @Email
     private String email;
 
-    @Size(min = 10, max = 100)
+    @Size(min = 8, max = 100)
     private String password;
 
     @NotBlank
-    private String name;
+    private String username;
 
 }

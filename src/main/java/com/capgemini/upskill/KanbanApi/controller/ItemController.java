@@ -7,6 +7,9 @@ import com.capgemini.upskill.KanbanApi.request.UpdateItemAssignRequest;
 import com.capgemini.upskill.KanbanApi.request.UpdateItemEstimationRequest;
 import com.capgemini.upskill.KanbanApi.request.UpdateItemStateRequest;
 import com.capgemini.upskill.KanbanApi.service.ItemService;
+import com.capgemini.upskill.KanbanApi.service.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -24,12 +27,15 @@ public class ItemController {
         this.itemService = itemService;
     }
 
+    private static final Logger logger = LoggerFactory.getLogger(UserService.class);
+
     @GetMapping
     public List<ItemDTO> getItemsFiltered(
             @RequestParam(name = "teamId", required = false) UUID teamId,
+            @RequestParam(name = "boardId", required = false) UUID boardId,
             @RequestParam(name = "state", required = false) ItemState state
     ) {
-        return itemService.getFiltered(teamId, state);
+        return itemService.getFiltered(teamId, boardId, state);
     }
 
     @PostMapping
@@ -65,6 +71,7 @@ public class ItemController {
     @PostMapping(path = "/{id}/state")
     @ResponseStatus(HttpStatus.OK)
     public void updateItemState(@RequestBody UpdateItemStateRequest request, @PathVariable("id") UUID itemId ) {
+        logger.info("Updating item state for itemId: {} to state: {}", itemId, request.state());
         CreateItemRequest createItemRequest = new CreateItemRequest(null, null, null, null, request.state(), null, null, null);
         itemService.updateItem(itemId, createItemRequest);
     }

@@ -25,17 +25,17 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         return new ErrorResponse() {
             @Override
             public HttpStatusCode getStatusCode() {
-                return HttpStatus.BAD_REQUEST;
+                return HttpStatus.NOT_FOUND;
             }
 
             @Override
             public ProblemDetail getBody() {
-                return ProblemDetail.forStatusAndDetail(HttpStatus.BAD_REQUEST, "Invalid parameter type: " + ex.getName());
+                return ProblemDetail.forStatusAndDetail(HttpStatus.NOT_FOUND, "Invalid parameter type: " + ex.getName());
             }
         };
     }
 
-    @ExceptionHandler(MethodArgumentNotValidException.class)
+/*    @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ErrorResponse handleValidationExceptions(MethodArgumentNotValidException ex) {
 
@@ -56,6 +56,6 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
                 return ProblemDetail.forStatusAndDetail(HttpStatus.BAD_REQUEST, "Validation failed: " + errors);
             }
         };
-    }
+    }*/
 
 }

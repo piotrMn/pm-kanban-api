@@ -11,10 +11,13 @@ public class LoginUserResponse {
 
     private String email;
 
-    public LoginUserResponse(String jwt, String userName, String email) {
+    private String[] authorities;
+
+    public LoginUserResponse(String jwt, String userName, String email, String[] authorities) {
         this.userName = userName;
         this.jwt = jwt;
         this.email = email;
+        this.authorities = authorities;
     }
 
 }

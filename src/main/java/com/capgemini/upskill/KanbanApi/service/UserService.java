@@ -13,22 +13,18 @@ import com.capgemini.upskill.KanbanApi.security.JwtService;
 import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.AuthenticationException;
 import org.springframework.stereotype.Service;
 
-import java.nio.file.attribute.UserPrincipalNotFoundException;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.util.List;
 import java.util.UUID;
 
 @Service
-public class UserService extends BaseService {
+public class UserService {
 
     private static final Logger logger = LoggerFactory.getLogger(UserService.class);
 
@@ -53,18 +49,18 @@ public class UserService extends BaseService {
         String hashedPassword = passwordService.hashPassword(request.getPassword(), passwordService.generateSalt());
         User user = new User();
         user.setEmail(request.getEmail());
-        user.setName(request.getName());
+        user.setName(request.getUsername());
         user.setPasswordHash(hashedPassword);
         userRepository.save(user);
     }
 
     public LoginUserResponse loginUser(LoginUserRequest request) {
-        UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword());
+        UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(request.email(), request.password());
         Authentication authentication = authenticationManager.authenticate(token);
         if (authentication.isAuthenticated()) {
-            User user = userRepository.findByEmail(request.getEmail()).orElseThrow();
-            String jwt = jwtService.generateToken(request.getEmail());
-            return new LoginUserResponse(jwt, user.getName(), user.getEmail());
+            User user = userRepository.findByEmail(request.email()).orElseThrow();
+            String jwt = jwtService.generateToken(request.email());
+            return new LoginUserResponse(jwt, user.getName(), user.getEmail(), mapRolesToAuthorities(user.getRole()));
         } else {
             return null;
         }
@@ -81,19 +77,35 @@ public class UserService extends BaseService {
     }
 
     @Transactional
-    public void addUserToTeam(UUID userId, UUID teamId) {
-        User user = userRepository.findById(userId).orElseThrow(createException(User.class, userId));
-        Team team = teamRepository.findById(teamId).orElseThrow(createException(Team.class, teamId));
+    public void addUserToTeam(String userId, String teamId) {
+        logger.info("Adding user {} to team {}", userId, teamId);
+        User user = userRepository.findById(UUID.fromString(userId)).orElseThrow();
+        Team team = teamRepository.findById(UUID.fromString(teamId)).orElseThrow();
         team.getUsers().add(user);
         user.getTeams().add(team);
     }
 
     @Transactional
     public void removeUserFromTeam(UUID userId, UUID teamId) {
-        Team team = teamRepository.findById(teamId).orElseThrow(createException(Team.class, teamId));
-        User user = team.getUsers().stream().filter(u -> u.getId().equals(userId)).findAny().orElseThrow(createException(User.class, userId));
+        Team team = teamRepository.findById(teamId).orElseThrow();
+        User user = team.getUsers().stream().filter(u -> u.getId().equals(userId)).findAny().orElseThrow();
         team.getUsers().remove(user);
         user.getTeams().remove(team);
+    }
+
+    public List<UserDTO> getAllUsers() {
+        List<User> users = userRepository.findAllByOrderByNameAsc();
+        return userMapper.toDTOs(users);
+    }
+
+    private String[] mapRolesToAuthorities(String role) {
+        if ("ROLE_ADMIN".equalsIgnoreCase(role)) {
+            return new String[]{"TABLE_READ", "TABLE_WRITE", "BOARD_READ", "BOARD_WRITE", "ITEM_READ", "ITEM_READ"};
+        } else if ("ROLE_USER".equalsIgnoreCase(role)) {
+            return new String[]{"TABLE_READ", "BOARD_READ", "ITEM_READ"};
+        } else {
+            return new String[]{};
+        }
     }
 
 }

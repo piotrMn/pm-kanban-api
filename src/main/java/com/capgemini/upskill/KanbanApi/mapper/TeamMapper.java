@@ -7,6 +7,7 @@ import com.capgemini.upskill.KanbanApi.dto.UserDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 @Service
@@ -19,7 +20,9 @@ public class TeamMapper {
     }
 
     public TeamDTO toDTO(Team team) {
-        return new TeamDTO(team.getId(), team.getName(), userMapper.toDTO(team.getCreatedBy()), team.getUsers().stream().map(userMapper::toDTO).toList());
+        return new TeamDTO(team.getId(), team.getName(), userMapper.toDTO(team.getCreatedBy()), team.getUsers()
+                .stream().sorted(Comparator.comparing(User::getName)).
+                map(userMapper::toDTO).toList());
     }
 
     public List<TeamDTO> toDTOs(List<Team> team) {

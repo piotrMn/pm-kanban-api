@@ -15,6 +15,8 @@ public interface UserRepository extends JpaRepository<User, UUID> {
     @Query(value = "select u from User u inner join u.teams t where t.id = :teamId")
     List<User> findByTeamId(UUID teamId);
 
+    List<User> findAllByOrderByNameAsc();
+
     Optional<User> findByEmail(String email);
 
 }

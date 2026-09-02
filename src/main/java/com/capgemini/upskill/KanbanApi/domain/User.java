@@ -20,12 +20,14 @@ public class User {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    @Email
+/*    @Email*/
     private String email;
 
     private String passwordHash;
 
     private String name;
+
+    private String role;
 
     @ManyToMany(mappedBy = "users", cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.EAGER)
     private Set<Team> teams = new HashSet<>();

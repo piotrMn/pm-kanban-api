@@ -16,7 +16,7 @@ logging:
   level:
     org:
       hibernate:
-        SQL: DEBUG
+        SQL: INFO
 app:
   jwt:
     secret: mQgFNWSrwQARkCydK40ts0BOwJarGYAd9f2xnrBKHDzE09w4PWT9qHwtbM23Kola
