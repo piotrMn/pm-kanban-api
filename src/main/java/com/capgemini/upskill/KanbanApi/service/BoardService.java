@@ -25,4 +25,9 @@ public class BoardService {
         return boardMapper.toDTOs(boards);
     }
 
+    public List<BoardDTO> getAllBoards() {
+        List<Board> boards = boardRepository.findAll();
+        return boardMapper.toDTOs(boards);
+    }
+
 }

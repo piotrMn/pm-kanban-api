@@ -12,7 +12,7 @@ import java.util.UUID;
 @Repository
 public interface ItemRepository extends JpaRepository<Item, UUID> {
 
-    @Query(value = "select i from Item i join i.team t join i.board b where t.id=coalesce(:teamId, t.id) and b.id=coalesce(:boardId, b.id) and i.state=coalesce(:state, i.state)")
+    @Query(value = "select i from Item i join i.board b join b.team t where t.id=coalesce(:teamId, t.id) and b.id=coalesce(:boardId, b.id) and i.state=coalesce(:state, i.state)")
     List<Item> getFiltered(UUID teamId, UUID boardId, ItemState state);
 
 }

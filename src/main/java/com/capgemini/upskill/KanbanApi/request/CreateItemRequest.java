@@ -11,7 +11,8 @@ public record CreateItemRequest (
         Integer estimation,
         ItemType type,
         ItemState state,
-        UUID createdById,
-        UUID assignedToId,
-        UUID teamId
+        String createdBy,
+        String assignedTo,
+
+        String boardId
 ){}

@@ -11,12 +11,15 @@ public class LoginUserResponse {
 
     private String email;
 
+    private String id;
+
     private String[] authorities;
 
-    public LoginUserResponse(String jwt, String userName, String email, String[] authorities) {
+    public LoginUserResponse(String jwt, String userName, String email, String id, String[] authorities) {
         this.userName = userName;
         this.jwt = jwt;
         this.email = email;
+        this.id = id;
         this.authorities = authorities;
     }
 

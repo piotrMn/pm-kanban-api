@@ -43,10 +43,6 @@ public class Item {
     private User assignedTo;
 
     @ManyToOne
-    @JoinColumn(name = "team_id")
-    private Team team;
-
-    @ManyToOne
     @JoinColumn(name = "board_id")
     private Board board;
 

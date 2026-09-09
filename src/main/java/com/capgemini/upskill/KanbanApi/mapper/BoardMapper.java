@@ -9,8 +9,14 @@ import java.util.List;
 @Component
 public class BoardMapper {
 
+    private final TeamMapper teamMapper;
+
+    public BoardMapper(TeamMapper teamMapper) {
+        this.teamMapper = teamMapper;
+    }
+
     public BoardDTO toDTO(Board board) {
-        return new BoardDTO(board.getId(), board.getName(), board.getTeam().getName(), board.getTeam().getId());
+        return new BoardDTO(board.getId(), board.getName(), teamMapper.toDTO(board.getTeam()));
     }
 
     public List<BoardDTO> toDTOs(List<Board> boards) {

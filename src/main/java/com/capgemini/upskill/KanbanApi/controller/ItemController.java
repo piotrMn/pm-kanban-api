@@ -1,8 +1,8 @@
 package com.capgemini.upskill.KanbanApi.controller;
 
-import com.capgemini.upskill.KanbanApi.request.CreateItemRequest;
 import com.capgemini.upskill.KanbanApi.domain.enums.ItemState;
 import com.capgemini.upskill.KanbanApi.dto.ItemDTO;
+import com.capgemini.upskill.KanbanApi.request.CreateItemRequest;
 import com.capgemini.upskill.KanbanApi.request.UpdateItemAssignRequest;
 import com.capgemini.upskill.KanbanApi.request.UpdateItemEstimationRequest;
 import com.capgemini.upskill.KanbanApi.request.UpdateItemStateRequest;
@@ -11,7 +11,6 @@ import com.capgemini.upskill.KanbanApi.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -64,7 +63,8 @@ public class ItemController {
     @PostMapping(path = "/{id}/assign")
     @ResponseStatus(HttpStatus.OK)
     public void assignUserToItem(@RequestBody UpdateItemAssignRequest request, @PathVariable("id") UUID itemId ) {
-        CreateItemRequest createItemRequest = new CreateItemRequest(null, null, null, null, null, null, request.assignTo(), null);
+        logger.info("Updating item assigned to for itemId: {} to user id: {}", itemId, request.assignedTo());
+        CreateItemRequest createItemRequest = new CreateItemRequest(null, null, null, null, null, null, request.assignedTo(), null);
         itemService.updateItem(itemId, createItemRequest);
     }
 

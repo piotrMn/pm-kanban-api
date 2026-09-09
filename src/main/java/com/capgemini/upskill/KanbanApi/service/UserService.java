@@ -60,7 +60,7 @@ public class UserService {
         if (authentication.isAuthenticated()) {
             User user = userRepository.findByEmail(request.email()).orElseThrow();
             String jwt = jwtService.generateToken(request.email());
-            return new LoginUserResponse(jwt, user.getName(), user.getEmail(), mapRolesToAuthorities(user.getRole()));
+            return new LoginUserResponse(jwt, user.getName(), user.getEmail(), user.getId().toString(), mapRolesToAuthorities(user.getRole()));
         } else {
             return null;
         }
@@ -100,7 +100,7 @@ public class UserService {
 
     private String[] mapRolesToAuthorities(String role) {
         if ("ROLE_ADMIN".equalsIgnoreCase(role)) {
-            return new String[]{"TABLE_READ", "TABLE_WRITE", "BOARD_READ", "BOARD_WRITE", "ITEM_READ", "ITEM_READ"};
+            return new String[]{"TABLE_READ", "TABLE_WRITE", "BOARD_READ", "BOARD_WRITE", "ITEM_READ", "ITEM_WRITE"};
         } else if ("ROLE_USER".equalsIgnoreCase(role)) {
             return new String[]{"TABLE_READ", "BOARD_READ", "ITEM_READ"};
         } else {

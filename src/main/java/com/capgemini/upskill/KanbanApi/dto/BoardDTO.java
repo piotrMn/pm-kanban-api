@@ -7,9 +7,8 @@ public record BoardDTO(
 
         String name,
 
-        String teamName,
+        TeamDTO team
 
-        UUID teamId
 ){}
 
 

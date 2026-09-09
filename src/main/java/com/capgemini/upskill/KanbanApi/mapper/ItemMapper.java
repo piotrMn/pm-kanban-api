@@ -30,7 +30,6 @@ public class ItemMapper {
                 item.getEstimation(),
                 item.getCreatedAt().toString(),
                 userMapper.toDTO(item.getCreatedBy()),
-                item.getTeam().getName(),
                 item.getAssignedTo() != null ? userMapper.toDTO(item.getAssignedTo()) : null,
                 boardMapper.toDTO(item.getBoard())
                 );

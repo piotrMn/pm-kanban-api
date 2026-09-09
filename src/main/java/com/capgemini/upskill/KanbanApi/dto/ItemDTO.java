@@ -12,7 +12,6 @@ public record ItemDTO (
         int estimation,
         String createdAt,
         UserDTO createdBy,
-        String teamName,
 
         UserDTO assignedTo,
 

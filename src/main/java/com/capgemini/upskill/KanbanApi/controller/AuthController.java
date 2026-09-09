@@ -45,7 +45,7 @@ public class AuthController {
         try {
             response = userService.loginUser(request);
         } catch (AuthenticationException e) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(new LoginUserResponse(null, null, null, null));
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(new LoginUserResponse(null, null, null, null, null));
         }
         return ResponseEntity.ok(response);
     }
