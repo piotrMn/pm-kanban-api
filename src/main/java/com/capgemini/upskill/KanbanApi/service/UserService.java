@@ -51,6 +51,7 @@ public class UserService {
         user.setEmail(request.getEmail());
         user.setName(request.getUsername());
         user.setPasswordHash(hashedPassword);
+        user.setRole("ROLE_USER");
         userRepository.save(user);
     }
 
@@ -64,16 +65,6 @@ public class UserService {
         } else {
             return null;
         }
-    }
-
-    public List<UserDTO> findUsersByTeam(UUID teamId) {
-        List<User> byTeamId = userRepository.findByTeamId(teamId);
-        return userMapper.toDTOs(byTeamId);
-    }
-
-    public UserDTO findUserByEmail(String email) {
-        User user = userRepository.findByEmail(email).orElseThrow();
-        return userMapper.toDTO(user);
     }
 
     @Transactional

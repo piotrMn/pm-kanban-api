@@ -7,7 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.JdbcType;
-import org.hibernate.dialect.type.PostgreSQLEnumJdbcType;
+// import org.hibernate.dialect.type.PostgreSQLEnumJdbcType;
 
 import java.sql.Timestamp;
 import java.time.Instant;
@@ -29,11 +29,11 @@ public class Item {
     private String description;
 
     @Enumerated(EnumType.STRING)
-    @JdbcType(PostgreSQLEnumJdbcType.class)
+    // @JdbcType(PostgreSQLEnumJdbcType.class)
     private ItemType type;
 
     @Enumerated(EnumType.STRING)
-    @JdbcType(PostgreSQLEnumJdbcType.class)
+    // @JdbcType(PostgreSQLEnumJdbcType.class)
     private ItemState state;
 
     private Integer estimation;

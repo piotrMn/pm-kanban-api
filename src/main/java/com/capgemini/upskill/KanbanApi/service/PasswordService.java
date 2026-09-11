@@ -39,12 +39,8 @@ public class PasswordService {
         KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, ITERATIONS, KEY_LENGTH);
         SecretKeyFactory factory = SecretKeyFactory.getInstance(ALGORITHM);
         byte[] hash = factory.generateSecret(spec).getEncoded();
-
-        // Encode salt and hash as Base64 for storage
         String saltBase64 = Base64.getEncoder().encodeToString(salt);
         String hashBase64 = Base64.getEncoder().encodeToString(hash);
-
-        // Store both salt and hash (e.g., "salt:hash")
         return saltBase64 + ":" + hashBase64;
 
     }

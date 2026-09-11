@@ -6,8 +6,6 @@ import com.capgemini.upskill.KanbanApi.response.LoginUserResponse;
 import com.capgemini.upskill.KanbanApi.service.UserService;
 import com.google.gson.Gson;
 import jakarta.validation.Valid;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.AuthenticationException;
@@ -16,8 +14,6 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping(path = "/auth")
 public class AuthController {
-
-    private static final Logger logger = LoggerFactory.getLogger(AuthController.class);
 
     private final UserService userService;
 

@@ -4,9 +4,7 @@ import java.util.UUID;
 
 public record BoardDTO(
         UUID id,
-
         String name,
-
         TeamDTO team
 
 ){}

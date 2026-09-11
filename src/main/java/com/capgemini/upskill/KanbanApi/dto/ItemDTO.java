@@ -12,9 +12,7 @@ public record ItemDTO (
         int estimation,
         String createdAt,
         UserDTO createdBy,
-
         UserDTO assignedTo,
-
         BoardDTO board
 ) {}
 

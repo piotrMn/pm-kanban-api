@@ -6,13 +6,9 @@ import lombok.Data;
 public class LoginUserResponse {
 
     private String jwt;
-
     private String userName;
-
     private String email;
-
     private String id;
-
     private String[] authorities;
 
     public LoginUserResponse(String jwt, String userName, String email, String id, String[] authorities) {

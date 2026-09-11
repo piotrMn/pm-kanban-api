@@ -1,13 +1,13 @@
 package com.capgemini.upskill.KanbanApi.controller;
 
-import com.capgemini.upskill.KanbanApi.domain.enums.ItemState;
 import com.capgemini.upskill.KanbanApi.dto.BoardDTO;
-import com.capgemini.upskill.KanbanApi.dto.ItemDTO;
 import com.capgemini.upskill.KanbanApi.service.BoardService;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 
 @RestController
