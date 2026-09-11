@@ -1,0 +1,112 @@
+INSERT INTO users (id, email, password_hash, name, role) VALUES
+    ('01a03e25-f736-7f0c-8a6d-78e2996664e1','zofia.jankowska@acme.com','sPJjJMyOPcgDsgVYutLS7Q==:/0oHJxUzuDyyc4OE6uYBZQ==','Zofia Jankowska','ROLE_ADMIN'),
+    ('01a03e26-886f-7537-a783-355d5989d707','bianka.glowacka@acme.com','tOT5zc+CppiPonQ7leCWjQ==:vodAh5Zu4p+R4yoNVbIZyA==','Bianka Glowacka','ROLE_USER'),
+    ('01a03e27-0c25-7460-ab1c-80a049042d30','kinga.jablonska@acme.com','Xdgt2mbYWS0KLGyKqmFrcQ==:ee4nDli60SV6PZcosmQrRQ==','Kinga Jablonska','ROLE_ADMIN'),
+    ('01a03e27-a905-7ba2-82d9-aa293fb832f0','bianka.makowska@acme.com','5gpKKmpwnR6TctmRBR2NDQ==:xQ2ia8cKnL7bfBuds9a5mQ==','Bianka Makowska','ROLE_USER'),
+    ('01a03e28-501f-7cc7-83eb-81cad32f3634','joanna.krajewska@acme.com','sPJjJMyOPcgDsgVYutLS7Q==:/0oHJxUzuDyyc4OE6uYBZQ==','Joanna Krajewska','ROLE_ADMIN'),
+    ('01a03e28-cea8-796a-b137-e0fab27d0f92','katarzyna.jasinska@acme.com','tOT5zc+CppiPonQ7leCWjQ==:vodAh5Zu4p+R4yoNVbIZyA==','Katarzyna Jasinska','ROLE_USER'),
+    ('01a03e29-676a-7c29-9d29-01cf06c4dcff','rozalia.sobczak@acme.com','Xdgt2mbYWS0KLGyKqmFrcQ==:ee4nDli60SV6PZcosmQrRQ==','Rozalia Sobczak','ROLE_ADMIN'),
+    ('01a03e2b-f808-7309-bb0b-e970a41d1226','nikola.borkowska@acme.com','5gpKKmpwnR6TctmRBR2NDQ==:xQ2ia8cKnL7bfBuds9a5mQ==','Nikola Borkowska','ROLE_USER'),
+    ('01a03e2c-79a0-70f4-8cc2-c44ef59fab43','adela.walczak@acme.com','sPJjJMyOPcgDsgVYutLS7Q==:/0oHJxUzuDyyc4OE6uYBZQ==','Adela Walczak','ROLE_ADMIN'),
+    ('01a03e2c-cfef-7efc-a37a-88d8f97d0469','laura.maciejewska@acme.com','tOT5zc+CppiPonQ7leCWjQ==:vodAh5Zu4p+R4yoNVbIZyA==','Laura Maciejewska','ROLE_USER'),
+    ('01a03e2d-246a-7b6f-9391-5e489689ec17','lucjan.kania@acme.com','Xdgt2mbYWS0KLGyKqmFrcQ==:ee4nDli60SV6PZcosmQrRQ==','Lucjan Kania','ROLE_ADMIN'),
+    ('01a03e2d-724c-7b86-93e5-68b5f415f363','oliwier.chmielewski@acme.com','5gpKKmpwnR6TctmRBR2NDQ==:xQ2ia8cKnL7bfBuds9a5mQ==','Oliwier Chmielewski','ROLE_USER'),
+    ('01a03e2d-f6b6-7f98-9b18-843c69505e0d','maksymilian.witkowski@acme.com','sPJjJMyOPcgDsgVYutLS7Q==:/0oHJxUzuDyyc4OE6uYBZQ==','Maksymilian Witkowski','ROLE_ADMIN'),
+    ('01a03e2e-9d65-7028-8dc3-5bf94a84801b','krystian.rutkowski@acme.com','tOT5zc+CppiPonQ7leCWjQ==:vodAh5Zu4p+R4yoNVbIZyA==','Krystian Rutkowski','ROLE_USER'),
+    ('01a03e2f-2244-73b8-b3de-11fb53021540','aleksander.kaminski@acme.com','Xdgt2mbYWS0KLGyKqmFrcQ==:ee4nDli60SV6PZcosmQrRQ==','Aleksander Kaminski','ROLE_ADMIN'),
+    ('01a03e2f-f105-7d22-a840-938a9e6c9fd0','dawid.majewski@acme.com','5gpKKmpwnR6TctmRBR2NDQ==:xQ2ia8cKnL7bfBuds9a5mQ==','Dawid Majewski','ROLE_USER'),
+    ('01a03e30-ca95-7cbf-89f1-add7142a3867','gustaw.pawlak@acme.com','sPJjJMyOPcgDsgVYutLS7Q==:/0oHJxUzuDyyc4OE6uYBZQ==','Gustaw Pawlak','ROLE_ADMIN'),
+    ('01a03e31-0a97-710e-be56-fea37aea0ccf','jeremi.nowak@acme.com','tOT5zc+CppiPonQ7leCWjQ==:vodAh5Zu4p+R4yoNVbIZyA==','Jeremi Nowak','ROLE_USER'),
+    ('01a03e31-4234-7581-a03f-741485f507f9','kamil.zielinski@acme.com','Xdgt2mbYWS0KLGyKqmFrcQ==:ee4nDli60SV6PZcosmQrRQ==','Kamil Zielimski','ROLE_ADMIN'),
+    ('01a03e31-a2d3-7546-bb04-de24b00b7119','wiktor@majewski@acme.com','5gpKKmpwnR6TctmRBR2NDQ==:xQ2ia8cKnL7bfBuds9a5mQ==','Wiktor Majewski','ROLE_USER'),
+    ('01a04d21-0f6a-73df-83fb-67a8b37e8782','wanda.szczapaniak@acme.com','j83xt4d/5LcDDR4RXUfqWA==:YRFX9yEO5W4M8YsQIu31Wg==','Wanda Szczepaniak','ROLE_ADMIN'),
+    ('01a04d22-24a9-71e5-977c-c33a4b11feca','urszula.kaczmarek@acme.com','4SN9xfwt2sw42V8d+fEw4A==:yp+VYsOpNc/+Uq23qA0r9g==','Urszula Kaczmarek','ROLE_USER'),
+    ('01a04d22-6c82-7bce-90ca-6f2f28cbabe3','emilia.zajac@acme.com','sPJjJMyOPcgDsgVYutLS7Q==:/0oHJxUzuDyyc4OE6uYBZQ==','Emilia Zajac','ROLE_ADMIN'),
+    ('01a04d22-b539-75ca-9d1d-aab00e2d9a06','henryk.glowacki@acme.com','Xdgt2mbYWS0KLGyKqmFrcQ==:ee4nDli60SV6PZcosmQrRQ==','Henryk Glowacki','ROLE_USER'),
+    ('01a04d22-f4a8-7640-8e24-0d026edaad30','antoni.szymczak@acme.com','j83xt4d/5LcDDR4RXUfqWA==:YRFX9yEO5W4M8YsQIu31Wg==','Antoni Szymczak','ROLE_ADMIN');
+
+INSERT INTO teams (id, name, created_by) VALUES
+    ('01a03e36-226e-71ca-ac98-88725055d2ea','SuperSonics','01a03e25-f736-7f0c-8a6d-78e2996664e1'),
+    ('01a03e37-57ae-7424-9208-742fcf68141d','ThunderBolts','01a03e2d-f6b6-7f98-9b18-843c69505e0d'),
+    ('01a03e38-23bb-7170-adef-c1ac2ed0bf85','MindHunters','01a03e2d-f6b6-7f98-9b18-843c69505e0d'),
+    ('01a03e36-d12a-7ae8-87be-45370988bb3e','TrailBlazers','01a03e25-f736-7f0c-8a6d-78e2996664e1'),
+    ('04655521-1b13-41f6-91e6-037b6be4e296','Hussars','01a03e2f-f105-7d22-a840-938a9e6c9fd0');
+
+INSERT INTO boards (id, name, team_id) VALUES
+    ('01a051f4-4c42-7402-8b21-315094d02436','SuperSonics PI 26.3','01a03e36-226e-71ca-ac98-88725055d2ea'),
+    ('01a0634d-4fc5-7cf6-9dd1-0f3f871ec997','TrailBlazers board','01a03e36-d12a-7ae8-87be-45370988bb3e'),
+    ('01a081ec-b097-7833-bfe0-92da99217a90','ThunderBolts 2026','01a03e37-57ae-7424-9208-742fcf68141d');
+
+INSERT INTO items (id, title, description, type, state, estimation, assigned_to, created_by, created_at, board_id) VALUES
+    ('01a05265-a7a0-7c97-87e6-6aed730ce11d','Integration testing in SIT','Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.','STORY','DONE',8,'01a03e31-0a97-710e-be56-fea37aea0ccf','01a03e31-0a97-710e-be56-fea37aea0ccf','2026-06-15 11:30:00','01a051f4-4c42-7402-8b21-315094d02436'),
+    ('01a04f28-e6e0-7ef1-8303-1a0eeb50c886','Fix menu buton','Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.','DEFECT','IN_PROGRESS',8,'01a03e29-676a-7c29-9d29-01cf06c4dcff','01a03e25-f736-7f0c-8a6d-78e2996664e1','2026-08-26 12:00:00','01a051f4-4c42-7402-8b21-315094d02436'),
+    ('01a06359-3e65-7fcf-a244-d5b0fa8fae58','Implement User controller','Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.','STORY','TO_DO',8,'01a03e31-4234-7581-a03f-741485f507f9','01a03e31-4234-7581-a03f-741485f507f9','2026-08-20 11:30:00','01a0634d-4fc5-7cf6-9dd1-0f3f871ec997'),
+    ('01a05260-e6ac-7c85-8552-dc78332cb408','Implement DB connectivity','Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.','STORY','READY',8,'01a03e26-886f-7537-a783-355d5989d707','01a03e31-a2d3-7546-bb04-de24b00b7119','2026-07-15 09:30:00','01a051f4-4c42-7402-8b21-315094d02436'),
+    ('01a05264-8df8-7a2f-b3fc-48b25d993801','Fix server logging','Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.','DEFECT','IN_TEST',5,'01a03e26-886f-7537-a783-355d5989d707','01a03e31-0a97-710e-be56-fea37aea0ccf','2026-08-20 09:30:00','01a051f4-4c42-7402-8b21-315094d02436'),
+    ('01a04f2a-059f-75e1-9e31-b8150ed3ff81','Implement Rest controller','Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.','STORY','READY_FOR_PROD',8,'01a03e26-886f-7537-a783-355d5989d707','01a03e25-f736-7f0c-8a6d-78e2996664e1','2026-08-25 12:00:00','01a051f4-4c42-7402-8b21-315094d02436'),
+    ('01a04f26-db1a-7870-aa72-891db086272c','Unit tests for login','Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.','STORY','IN_PROGRESS',5,'01a03e25-f736-7f0c-8a6d-78e2996664e1','01a03e25-f736-7f0c-8a6d-78e2996664e1','2026-08-27 14:35:12.123','01a051f4-4c42-7402-8b21-315094d02436'),
+    ('01a05266-624a-7d7a-b996-f0d3ab153bba','Migrate from Ehcache to Terracotta','Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.','EPIC','TO_DO',13,'01a03e31-0a97-710e-be56-fea37aea0ccf','01a03e31-0a97-710e-be56-fea37aea0ccf','2026-07-15 11:30:00','01a051f4-4c42-7402-8b21-315094d02436'),
+    ('01a0635a-d5d3-73f1-8e10-1bbb733e781d','Fix multithreading issue','Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.','DEFECT','READY',8,'01a03e2b-f808-7309-bb0b-e970a41d1226','01a03e31-4234-7581-a03f-741485f507f9','2026-08-20 09:30:00','01a0634d-4fc5-7cf6-9dd1-0f3f871ec997'),
+    ('01a0635c-4b77-7337-8440-412619506aed','Integration testing in UAT','Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.','STORY','IN_TEST',5,'01a03e28-501f-7cc7-83eb-81cad32f3634','01a03e25-f736-7f0c-8a6d-78e2996664e1','2026-07-15 09:30:00','01a0634d-4fc5-7cf6-9dd1-0f3f871ec997'),
+    ('01a0635e-364b-7b87-a1f8-1e86db4ee283','PR review','Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.','STORY','CODE_REVIEW',5,'01a03e2b-f808-7309-bb0b-e970a41d1226','01a03e25-f736-7f0c-8a6d-78e2996664e1','2026-08-20 09:30:00','01a0634d-4fc5-7cf6-9dd1-0f3f871ec997'),
+    ('01a06361-c4bd-7779-87e8-a6aa364b73d3','Add signup component','Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.','STORY','TO_DO',5,'01a03e25-f736-7f0c-8a6d-78e2996664e1','01a03e31-4234-7581-a03f-741485f507f9','2026-07-15 09:30:00','01a0634d-4fc5-7cf6-9dd1-0f3f871ec997'),
+    ('01a081f3-89b8-777b-aa4e-31448e09b668','Technical spec for NATH-50215','Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.','STORY','TO_DO',8,'01a03e2f-2244-73b8-b3de-11fb53021540','01a03e2f-2244-73b8-b3de-11fb53021540','2026-09-01 08:45:00','01a081ec-b097-7833-bfe0-92da99217a90'),
+    ('01a081f5-b3ce-7160-a307-1f63eb2709b9','Fix timeout handling','Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.','DEFECT','IN_PROGRESS',5,'01a03e2f-f105-7d22-a840-938a9e6c9fd0','01a03e2f-2244-73b8-b3de-11fb53021540','2026-09-02 14:45:00','01a081ec-b097-7833-bfe0-92da99217a90'),
+    ('01a081f8-2ad4-7dcf-b745-3d124b1206b3','E2E testing in Cert','Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.','EPIC','IN_TEST',13,'01a03e2c-cfef-7efc-a37a-88d8f97d0469','01a03e2c-cfef-7efc-a37a-88d8f97d0469','2026-09-02 12:45:00','01a081ec-b097-7833-bfe0-92da99217a90'),
+    ('01a08c07-e527-715d-95d9-c578e3256ff3','Architecture Diagram in C4','Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.','STORY','TO_DO',8,'01a03e27-a905-7ba2-82d9-aa293fb832f0','01a03e2f-f105-7d22-a840-938a9e6c9fd0','2026-09-06 13:30:00','01a081ec-b097-7833-bfe0-92da99217a90'),
+    ('01a0635f-1fc7-7a4b-9c05-6f0eeb1e3714','Migrate to React','Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.','EPIC','DONE',13,'01a03e28-501f-7cc7-83eb-81cad32f3634','01a03e28-501f-7cc7-83eb-81cad32f3634','2026-08-26 12:00:00','01a0634d-4fc5-7cf6-9dd1-0f3f871ec997');
+
+INSERT INTO comments (id, item_id, author_id, content, created_at) VALUES
+    ('01a08755-4dd0-7f94-ad6c-36b1b9670c3a','01a04f26-db1a-7870-aa72-891db086272c','01a03e29-676a-7c29-9d29-01cf06c4dcff','Phone call wiith IT support','2026-09-04 12:15:00'),
+    ('f47d8f20-978f-46f8-bf5c-0631b9f1c8e8','01a04f26-db1a-7870-aa72-891db086272c','01a03e25-f736-7f0c-8a6d-78e2996664e1','Galia divida est in partes tres','2026-09-09 21:47:22.59758'),
+    ('3926fc20-fc15-4879-b53d-f7bcb4ff65dc','01a05264-8df8-7a2f-b3fc-48b25d993801','01a03e25-f736-7f0c-8a6d-78e2996664e1','My first comment','2026-09-09 22:52:24.411739'),
+    ('be542aab-778d-4f6c-ad06-14ec1a59bee0','01a05265-a7a0-7c97-87e6-6aed730ce11d','01a03e25-f736-7f0c-8a6d-78e2996664e1','My first comment','2026-09-09 22:54:17.751759'),
+    ('34133877-4d84-4ebd-a06b-685107c35813','01a05265-a7a0-7c97-87e6-6aed730ce11d','01a03e25-f736-7f0c-8a6d-78e2996664e1','Second commit','2026-09-09 22:57:40.060694'),
+    ('55772365-23ad-4b6e-86a9-1e661fdcc881','01a04f28-e6e0-7ef1-8303-1a0eeb50c886','01a03e29-676a-7c29-9d29-01cf06c4dcff','Started working on story','2026-09-10 18:52:54.891372');
+
+
+INSERT INTO user_team (user_id, team_id) VALUES
+    ('01a03e25-f736-7f0c-8a6d-78e2996664e1','01a03e36-226e-71ca-ac98-88725055d2ea'),
+    ('01a03e31-0a97-710e-be56-fea37aea0ccf','01a03e36-226e-71ca-ac98-88725055d2ea'),
+    ('01a03e29-676a-7c29-9d29-01cf06c4dcff','01a03e36-226e-71ca-ac98-88725055d2ea'),
+    ('01a03e31-a2d3-7546-bb04-de24b00b7119','01a03e36-226e-71ca-ac98-88725055d2ea'),
+    ('01a03e31-4234-7581-a03f-741485f507f9','01a03e36-d12a-7ae8-87be-45370988bb3e'),
+    ('01a03e2b-f808-7309-bb0b-e970a41d1226','01a03e36-d12a-7ae8-87be-45370988bb3e'),
+    ('01a03e2e-9d65-7028-8dc3-5bf94a84801b','01a03e36-d12a-7ae8-87be-45370988bb3e'),
+    ('01a03e28-501f-7cc7-83eb-81cad32f3634','01a03e36-d12a-7ae8-87be-45370988bb3e'),
+    ('01a03e2c-79a0-70f4-8cc2-c44ef59fab43','01a03e36-d12a-7ae8-87be-45370988bb3e'),
+    ('01a03e2f-2244-73b8-b3de-11fb53021540','01a03e37-57ae-7424-9208-742fcf68141d'),
+    ('01a03e2f-f105-7d22-a840-938a9e6c9fd0','01a03e37-57ae-7424-9208-742fcf68141d'),
+    ('01a03e2c-cfef-7efc-a37a-88d8f97d0469','01a03e37-57ae-7424-9208-742fcf68141d'),
+    ('01a03e27-a905-7ba2-82d9-aa293fb832f0','01a03e37-57ae-7424-9208-742fcf68141d'),
+    ('01a03e30-ca95-7cbf-89f1-add7142a3867','01a03e37-57ae-7424-9208-742fcf68141d'),
+    ('01a03e27-0c25-7460-ab1c-80a049042d30','01a03e38-23bb-7170-adef-c1ac2ed0bf85'),
+    ('01a03e28-cea8-796a-b137-e0fab27d0f92','01a03e38-23bb-7170-adef-c1ac2ed0bf85'),
+    ('01a03e2d-f6b6-7f98-9b18-843c69505e0d','01a03e38-23bb-7170-adef-c1ac2ed0bf85'),
+    ('01a03e2d-724c-7b86-93e5-68b5f415f363','01a03e38-23bb-7170-adef-c1ac2ed0bf85'),
+    ('01a03e2d-246a-7b6f-9391-5e489689ec17','01a03e38-23bb-7170-adef-c1ac2ed0bf85'),
+    ('01a03e2c-79a0-70f4-8cc2-c44ef59fab43','01a03e36-226e-71ca-ac98-88725055d2ea'),
+    ('01a04d22-f4a8-7640-8e24-0d026edaad30','01a03e37-57ae-7424-9208-742fcf68141d'),
+    ('01a03e2c-79a0-70f4-8cc2-c44ef59fab43','04655521-1b13-41f6-91e6-037b6be4e296'),
+    ('01a04d22-6c82-7bce-90ca-6f2f28cbabe3','04655521-1b13-41f6-91e6-037b6be4e296'),
+    ('01a03e28-501f-7cc7-83eb-81cad32f3634','04655521-1b13-41f6-91e6-037b6be4e296'),
+    ('01a03e31-a2d3-7546-bb04-de24b00b7119','04655521-1b13-41f6-91e6-037b6be4e296'),
+    ('01a03e2f-2244-73b8-b3de-11fb53021540','04655521-1b13-41f6-91e6-037b6be4e296'),
+    ('01a03e31-4234-7581-a03f-741485f507f9','01a03e36-226e-71ca-ac98-88725055d2ea'),
+    ('01a03e25-f736-7f0c-8a6d-78e2996664e1','01a03e36-d12a-7ae8-87be-45370988bb3e');
+
+INSERT INTO wip_limits (id, team_id, state, max_items) VALUES
+    ('01a081fc-28ec-7b7b-90bf-256e76150965','01a03e36-226e-71ca-ac98-88725055d2ea','READY',4),
+    ('01a081fc-ac4d-7e46-9fac-b8ffb1893ed1','01a03e36-226e-71ca-ac98-88725055d2ea','CODE_REVIEW',4),
+    ('01a081fc-f402-7293-aa5e-a63081364407','01a03e36-226e-71ca-ac98-88725055d2ea','IN_TEST',4),
+    ('01a081fd-54d1-7107-8cb4-601f8cbbdca0','01a03e36-226e-71ca-ac98-88725055d2ea','READY_FOR_PROD',4),
+    ('01a081fd-8c46-7f4d-a2b5-6feefb1c1b93','01a03e36-226e-71ca-ac98-88725055d2ea','DONE',4),
+    ('01a081fd-e121-70fa-b3a4-362a13a21e44','01a03e36-226e-71ca-ac98-88725055d2ea','TO_DO',4),
+    ('01a081fb-af2f-7919-b27e-7979132d9e16','01a03e36-226e-71ca-ac98-88725055d2ea','IN_PROGRESS',3),
+    ('01a08c01-0caa-7a30-8b64-2457a981113f','01a03e36-d12a-7ae8-87be-45370988bb3e','TO_DO',3),
+    ('01a08c01-e05b-7e50-b205-d09a5e8baf46','01a03e36-d12a-7ae8-87be-45370988bb3e','DONE',3),
+    ('01a08c02-a59c-7a99-b8d8-1bc7eb0d1b4b','01a03e36-d12a-7ae8-87be-45370988bb3e','READY_FOR_PROD',4),
+    ('01a08c03-3a83-707c-80b0-5235d98a9bdd','01a03e36-d12a-7ae8-87be-45370988bb3e','IN_TEST',2),
+    ('01a08c03-8fac-7abc-86f2-8072e2e6ae62','01a03e36-d12a-7ae8-87be-45370988bb3e','CODE_REVIEW',3),
+    ('01a08c04-7825-7437-a0fe-a4e571a75475','01a03e36-d12a-7ae8-87be-45370988bb3e','READY',4),
+    ('01a08c04-d433-7c80-b0e1-2055ab2873f0','01a03e36-d12a-7ae8-87be-45370988bb3e','IN_PROGRESS',3);
