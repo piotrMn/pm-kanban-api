@@ -1,11 +1,11 @@
 package com.capgemini.upskill.KanbanApi.controller;
 
 import com.capgemini.upskill.KanbanApi.dto.BoardDTO;
+import com.capgemini.upskill.KanbanApi.request.CreateBoardRequest;
+import com.capgemini.upskill.KanbanApi.request.CreateTeamRequest;
 import com.capgemini.upskill.KanbanApi.service.BoardService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.UUID;
@@ -23,6 +23,12 @@ public class BoardController {
     @GetMapping()
     public List<BoardDTO> getAllBoards() {
         return boardService.getAllBoards();
+    }
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public void createTeam(@RequestBody CreateBoardRequest request) {
+        boardService.saveBoard(request);
     }
 
     @GetMapping(path = "/{teamId}")
